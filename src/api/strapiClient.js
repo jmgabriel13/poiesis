@@ -2,7 +2,7 @@ import { getApiBaseUrl, getStrapiToken } from "./baseUrl";
 
 const BASE_URL = getApiBaseUrl();
 const TOKEN = getStrapiToken();
-console.log(BASE_URL, TOKEN)
+
 export async function strapiFetch(endpoint, options = {}) {
     try {
         const res = await fetch(`${BASE_URL}${endpoint}`, {
