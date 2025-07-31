@@ -1,57 +1,7 @@
 import { ExternalLink, Facebook, Instagram, Linkedin, UsersRound } from 'lucide-react';
+import { getTeamMembers } from '../services/services';
 
-const teamMembers = [
-    {
-        id: 1,
-        name: "Jabi",
-        role: "Project Manager",
-        description: "sample description",
-        image: "/team/jabi.jpg",
-        linkedIn: "",
-        facebook: "",
-        instagram: ""
-    },
-    {
-        id: 2,
-        name: "JM",
-        role: "Developer",
-        description: "sample description",
-        image: "/team/jm.jpg",
-        linkedIn: "",
-        facebook: "",
-        instagram: ""
-    },
-    {
-        id: 3,
-        name: "Froilan",
-        role: "QA",
-        description: "sample description",
-        image: "/team/froilan.jpg",
-        linkedIn: "",
-        facebook: "",
-        instagram: ""
-    },
-    {
-        id: 4,
-        name: "Kent",
-        role: "UI/UX",
-        description: "sample description",
-        image: "/team/kent.jpg",
-        linkedIn: "",
-        facebook: "",
-        instagram: ""
-    },
-    {
-        id: 5,
-        name: "Krizzia",
-        role: "Data Engineer",
-        description: "sample description",
-        image: "/team/krizzia.jpg",
-        linkedIn: "",
-        facebook: "",
-        instagram: ""
-    }
-]
+const teamMembers = await getTeamMembers();
 
 export const TeamSection = () => {
     return (

@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react'
 import { cn } from '../lib/utils';
 import { Menu, X } from 'lucide-react';
+import { getMainNavMenus } from '../services/services';
 
-const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Our Team', href: '#ourTeam' },
-];
+const navItems = await getMainNavMenus();
 
-export const Navbar = () => {
+export const Navbar = ({ siteTitle1, siteTitle2 }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -32,7 +30,7 @@ export const Navbar = () => {
             <div className='container flex items-center justify-between'>
                 <a href='#hero' className='text-xl font-bold text-primary flex items-center'>
                     <span className='relative z-10'>
-                        Poiesis <span className='text-glow text-foreground'>Tech</span>
+                        {siteTitle1 || "Poiesis"} <span className='text-glow text-foreground'>{siteTitle2 || "Tech"}</span>
                     </span>
                 </a>
 
